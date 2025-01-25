@@ -3,42 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
       <!-- 網站 favicon -->
     <link rel="icon" href="subsidy.png" type="image/x-icon">
-    
+
     <title>超快速補助辦法說明-代償墊付</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
         }
+
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #007bff, #6c63ff);
+            color: #fff;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h1 {
             text-align: center;
-            color: #007BFF;
         }
-        p {
-            font-size: 1rem;
-            margin-bottom: 1em;
-        }
-        ol {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-        ol li {
+
+        .header h1 {
+            font-size: 2rem;
             margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 60px;
+        }
+
+        .content p {
+            margin-bottom: 10px;
+        }
+
+        .steps {
+            margin: 20px 0;
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .steps li {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background: #e9ecef;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .steps li::before {
+            content: counter(step);
+            counter-increment: step;
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #007bff;
+            color: #fff;
+            font-weight: bold;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            text-align: center;
         }
         .notice {
             background-color: #FFF3CD;
@@ -48,33 +93,25 @@
             margin-top: 20px;
             color: #856404;
         }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.875rem;
-            color: #666;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>超快速補助辦法說明-代償墊付</h1>
-        
-        <p>步驟如下：</p>
-        <ol>
-            <li>購買助聽器時事先告知門市人員，想要使用此辦法。</li>
-            <li>"25號評估報告書"驗證完成「後」，將所有資料帶回門市。</li>
-            <li>核對相關文件後，填寫領據等文件，即可現場領取補助款。</li>
-        </ol>
-        
+        <div class="header">
+            <h1>超快速補助辦法說明-代償墊付</h1>
+        </div>
+        <div class="content">
+            <p>只需簡單幾個步驟，即可快速完成補助申請：</p>
+            <ul class="steps">
+               <li>購買助聽器時事先告知門市人員，想要使用此辦法。</li>
+               <li>"25號評估報告書"驗證完成「後」，將所有資料帶回門市。</li>
+               <li>核對相關文件後，填寫領據等文件，即可現場領取補助款。</li>
+            </ul>
         <div class="notice">
             <strong>注意事項：</strong><br>
-            如現場款項不足退款，則以匯款方式撥退補助款。<br>
-            需請提供存摺封面影本。
+            如現場款項不足退款，則以匯款方式撥退補助款。(需請提供存摺封面影本)
         </div>
-        <footer>
-            詳情請洽門市人員了解
-        </footer>
-    </div>
+        </div>
+
 </body>
 </html>
